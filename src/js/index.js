@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function initPopup(yourCity) {
             const yourCityYes = yourCity.querySelector('.yes');
             const yourCityNo = yourCity.querySelector('.no');
-
+        
             // Функция получения cookie по имени
             function getCookie(name) {
                 const matches = document.cookie.match(
@@ -103,65 +103,56 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
                 return matches ? decodeURIComponent(matches[1]) : undefined;
             }
-
-            // Функция установки cookie с указанием времени жизни
-            function setCookie(name, value, days) {
-                let expires = "";
-                if (days) {
-                    const date = new Date();
-                    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Установка времени жизни в днях
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
-            }
-
+        
             // Функция показа попапа
             function showPopup() {
                 yourCity.classList.add('open');
             }
-
+        
             // Функция обработки клика по кнопкам
-            function handleButtonClick() {
+            function handleButtonClick(choice) {
                 const currentTimestamp = Date.now();
+                
+                // Устанавливаем cookie только после выбора
                 setCookie('last_open_' + yourCity.dataset.id, currentTimestamp, 1); // Устанавливаем cookie на 1 день
+        
                 removeClass(yourCity, 'open');
             }
-
-            // Получение текущего timestamp
-            const currentTimestamp = Date.now();
-
-            // Проверка, был ли попап открыт последние 24 часа
+        
+            // Проверка наличия cookie и показываем попап только если его нет
             const lastOpenTimestamp = getCookie('last_open_' + yourCity.dataset.id);
-            if (lastOpenTimestamp) {
-                const elapsedTime = currentTimestamp - parseInt(lastOpenTimestamp, 10); // Разница во времени
-                const oneDayInMs = 24 * 60 * 60 * 1000; // 24 часа в миллисекундах
-                if (elapsedTime >= oneDayInMs) {
-                    // Если прошло 24 часа или больше, показать попап
-                    showPopup();
-                    setCookie('last_open_' + yourCity.dataset.id, currentTimestamp, 1); // Обновляем cookie на 1 день
-                }
-            } else {
-                // Если cookie нет, показываем попап и создаём cookie
-                showPopup();
-                setCookie('last_open_' + yourCity.dataset.id, currentTimestamp, 1); // Устанавливаем cookie на 1 день
+            if (!lastOpenTimestamp) {
+                showPopup(); // Показываем попап, если cookie нет
             }
-
+        
             // Добавляем обработчики кликов
-            yourCityYes.addEventListener('click', handleButtonClick);
-            yourCityNo.addEventListener('click', handleButtonClick);
+            yourCityYes.addEventListener('click', () => handleButtonClick('yes'));
+            yourCityNo.addEventListener('click', () => handleButtonClick('no'));
         }
-
+        
         // Получаем все элементы your_city на странице
         const yourCities = document.querySelectorAll('.your_city');
         yourCities.forEach((yourCity, index) => {
             yourCity.dataset.id = index; // Присваиваем уникальный идентификатор для каждого элемента
             initPopup(yourCity); // Инициализируем попап для текущего элемента
         });
-
+        
         // Функция для удаления класса
         function removeClass(element, className) {
             element.classList.remove(className);
         }
+        
+        // Функция установки cookie с указанием времени жизни
+        function setCookie(name, value, days) {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000); // Установка времени жизни в днях
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/";
+        }
+        
 
     }
 
