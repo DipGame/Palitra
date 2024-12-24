@@ -1,0 +1,39 @@
+.service_sect_text_1 {
+
+    padding: 40px;
+    background-color: #DFE9F1;
+    border-radius: 30px;
+    overflow: hidden;
+
+    .default {
+        margin: 0;
+
+    }
+}
+
+@media (max-width: 500px) {
+    .service_sect_text_1 {
+        padding: 30px;
+
+        .default {
+
+            div,
+            li,
+            p,
+            a,
+            span,
+            section,
+            button {
+                font-family: Manrope;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 24px;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+            }
+
+        }
+    }
+
+}

@@ -1,0 +1,229 @@
+.overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 10;
+    transition: .5s;
+}
+
+.overlay.open {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.overlay_2 {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 13;
+    transition: .5s;
+}
+
+.overlay_2.open {
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+    max-width: max-content;
+    padding: 0 20px;
+}
+
+.popup_city {
+    z-index: 13;
+}
+
+.popup.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup .popup__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #DFE9F1;
+    border-radius: 20px;
+    padding: 50px 20px 20px;
+    width: 100%;
+    min-width: 300px;
+
+    .close_popup {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .close_popup:hover {
+        opacity: .5;
+    }
+
+    p {
+        display: block;
+        text-align: start;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 26px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        li {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+
+            a.active {
+                color: #F17E07;
+                
+            }
+
+            a {
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 20px;
+            }
+        }
+
+        li::before {
+            content: "";
+            min-width: 15px;
+            min-height: 15px;
+            max-width: 15px;
+            max-height: 15px;
+            background-image: url("./../img/point_city.svg");
+            background-position: center;
+            background-size: contain;
+        }
+    }
+}
+
+
+.popupCheck {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: max-content;
+    padding: 0 20px;
+  }
+  
+  .popupCheck .popup__container {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    position: relative;
+    background-color: #F4F6F9;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 20px 20px;
+    max-height: 70vh;
+    overflow-y: scroll;
+  }
+  
+  .popupCheck .popup__container h2 {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 28.8px;
+    text-align: left;
+    color: #F17E07;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .popupCheck .popup__container p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    text-align: left;
+    color: #A1A1A9;
+    margin-bottom: 20px;
+  }
+  
+  .popupCheck .popup__container span,
+  .popupCheck .popup__container span a {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 19.6px;
+    text-align: left;
+  }
+  
+  .popupCheck .popup__container span a {
+    text-decoration: underline;
+  }
+  
+  .popupCheck .popup__container span {
+    margin-bottom: 10px;
+  }
+  
+  .popupCheck .popup__container .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 3;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+  }
+  
+  .popupCheck .popup__container .close-btn:hover path {
+    opacity: 0.5;
+  }
+  
+  .popupCheck.open {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s;
+  }
+  
+  @media (min-width: 991px) {
+    .popupCheck .popup__container {
+      overflow: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  
+    .popupCheck .popup__container::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }

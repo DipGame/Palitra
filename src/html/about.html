@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Стартовый шаблон</title>
+    <link rel="stylesheet" href="./fonts/Manrope.css" />
+    <link rel="stylesheet" href="./css/jquery.fancybox.css" />
+    <link rel="stylesheet" href="./css/swiper-bundle.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/jquery.fancybox.js"></script>
+    <script src="./js/swiper-bundle.js"></script>
+</head>
+
+<body>
+    @@include('blocks/_popups.html')
+    @@include('blocks/_header.html')
+    <main>
+       <h1 class="title">
+            О компании
+       </h1>
+       @@include('blocks/_service_sect_text_1.html')
+       @@include('blocks/_what_we_do.html')
+       @@include('blocks/_why_choice_us.html')
+       @@include('blocks/_we_just.html')
+       @@include('blocks/_form_desk_1.html')
+    </main>
+    @@include('blocks/_footer.html')
+
+    <script src="./js/addSwiper.js"></script>
+    <script src="./js/copyElements.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

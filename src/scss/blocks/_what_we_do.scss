@@ -1,0 +1,77 @@
+.what_we_do {
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        .card {
+            padding: 30px;
+            border-radius: 40px;
+            background-color: #DFE9F1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+            svg {
+                width: 100px;
+                height: 100px;
+            }
+
+            .title_cont {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                h3 {
+                    font-family: Manrope;
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 33.6px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                }
+
+                p {
+                    font-family: Manrope;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 24px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 970px) {
+    .what_we_do .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    .what_we_do .grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .what_we_do .grid .card {
+        padding: 30px;
+
+        .title_cont p {
+            font-family: Manrope;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 22px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+    }
+}

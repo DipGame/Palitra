@@ -1,0 +1,92 @@
+.service_sect_term {
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 30px;
+            background-color: #DFE9F1;
+            border-radius: 30px;
+
+            .tit,
+            .tit span {
+                color: #F17B2C;
+            }
+
+            .tit {
+                font-family: Manrope;
+                font-size: 32px;
+                font-weight: 500;
+                line-height: 43.71px;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+
+                span {
+                    font-family: Manrope;
+                    font-size: 50px;
+                    font-weight: 500;
+                    line-height: 68.3px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+                }
+            }
+
+            .tex {
+                font-family: Manrope;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 26px;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 970px) {
+    .service_sect_term .grid {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .service_sect_term .grid .card .tit {
+        font-family: Manrope;
+        font-size: 40px;
+        font-weight: 500;
+        line-height: 54.64px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+        span {
+            font-family: Manrope;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 54.64px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+
+        }
+    }
+
+    .service_sect_term .grid .card .tex {
+        font-family: Manrope;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+}

@@ -1,0 +1,114 @@
+.service_sect_disare {
+    border-radius: 60px;
+    background-color: #F17B2C;
+    padding: 50px 60px;
+    background-size: auto 100%;
+    background-position: 135% 0;
+
+
+
+    .cont {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 595px;
+
+        h2 {
+            font-family: Manrope;
+            font-size: 50px;
+            font-weight: 600;
+            line-height: 54px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            color: #FFF;
+        }
+
+        .default {
+            margin: 0;
+
+            div,
+            li,
+            ul li::marker,
+            p,
+            a,
+            span,
+            section,
+            button {
+                color: #FFF;
+                font-family: Manrope;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 30px;
+                text-align: left;
+                text-underline-position: from-font;
+                text-decoration-skip-ink: none;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+        }
+
+        .button_v2 {
+            max-width: 233px;
+        }
+    }
+}
+
+@media (max-width: 970px) {
+    .service_sect_disare {
+        background-position: 188% 0;
+    }
+}
+
+@media (max-width: 720px) {
+    .service_sect_disare .cont .default .grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .service_sect_disare {
+        background-position: 200px 0;
+        padding: 30px;
+        padding-bottom: 50px;
+        border-radius: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    .service_sect_disare .cont h2 {
+        font-family: Manrope;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 48px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+    }
+
+    .service_sect_disare .cont .default div,
+    .service_sect_disare .cont .default li,
+    .service_sect_disare .cont .default ul li::marker,
+    .service_sect_disare .cont .default p,
+    .service_sect_disare .cont .default a,
+    .service_sect_disare .cont .default span,
+    .service_sect_disare .cont .default section,
+    .service_sect_disare .cont .default button {
+        font-family: Manrope;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+    }
+
+    .service_sect_disare {
+        background-position: 0px 0;
+    }
+}

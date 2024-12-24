@@ -1,0 +1,159 @@
+.service_sect_quest_section {
+    background-color: #DFE9F1;
+}
+
+.service_sect_quest.v2 {
+    padding: 0;
+
+    .quest_cont {
+        .card {
+            background-color: #DFE9F1;
+            
+            .top svg {
+
+                circle {
+                    fill: #FFF;
+                }
+            }
+        }
+    }
+}
+
+.service_sect_quest {
+    padding: 80px 0;
+
+    .quest_cont {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .card {
+            border-radius: 110px;
+            background-color: #FFF;
+            padding: 25px 40px;
+            transition: .5s;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            .default {
+                display: none;
+                margin: 0;
+
+                div,
+                li,
+                p,
+                a,
+                span,
+                section,
+                button {
+                    font-family: Manrope;
+                    font-size: 18px;
+                    font-weight: 400;
+                    line-height: 28px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+
+                }
+            }
+
+            .top {
+                display: flex;
+                gap: 20px;
+                justify-content: space-between;
+                align-items: center;
+
+                h3 {
+                    font-family: Manrope;
+                    font-size: 32px;
+                    font-weight: 500;
+                    line-height: 36px;
+                    text-align: left;
+                    text-underline-position: from-font;
+                    text-decoration-skip-ink: none;
+
+                }
+
+                svg {
+                    min-width: 60px;
+                    min-height: 60px;
+                    max-width: 60px;
+                    max-height: 60px;
+                    transition: .5s;
+                }
+            }
+        }
+
+        .card.active {
+            border-radius: 40px;
+            padding: 30px 40px;
+
+            .default {
+                display: flex;
+            }
+
+            .top {
+
+                svg {
+                    transform: rotate(-180deg);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 720px) {
+    .service_sect_quest {
+        padding: 60px 0;
+    }
+
+    .service_sect_quest .quest_cont .card .top svg {
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+        transition: 0.5s;
+    }
+
+    .service_sect_quest .quest_cont .card .top h3 {
+        font-family: Manrope;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+    }
+
+    .service_sect_quest .quest_cont .card .default div,
+    .service_sect_quest .quest_cont .card .default li,
+    .service_sect_quest .quest_cont .card .default p,
+    .service_sect_quest .quest_cont .card .default a,
+    .service_sect_quest .quest_cont .card .default span,
+    .service_sect_quest .quest_cont .card .default section,
+    .service_sect_quest .quest_cont .card .default button {
+        font-family: Manrope;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: left;
+        text-underline-position: from-font;
+        text-decoration-skip-ink: none;
+
+    }
+
+    .service_sect_quest .quest_cont .card {
+        padding: 20px 25px;
+    }
+
+    .service_sect_quest .quest_cont .card.active {
+        padding: 20px 25px;
+    }
+
+    .service_sect_quest .quest_cont .card .top {
+        gap: 5px;
+    }
+}

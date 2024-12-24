@@ -1,0 +1,122 @@
+.main_baner {
+    overflow: hidden;
+    border-radius: 40px;
+    background-color: #1A1A1A;
+
+    p,
+    a,
+    h2 {
+        color: #FFF;
+    }
+
+    .sw_cont {
+        display: flex;
+        height: 350px;
+    }
+}
+
+.swiperBanerLeft {
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 85px 20px 30px 40px;
+
+
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0;
+    }
+
+    .swiperBanerLeft-pagination {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .swiper-pagination-bullet {
+        background: #FFF;
+        opacity: .3;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: #FFF;
+        opacity: 1;
+    }
+}
+
+.swiperBanerRight {
+    img {
+        object-fit: cover;
+        object-position: center;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 970px) {
+    .main_baner .sw_cont {
+        flex-direction: column-reverse;
+        height: auto;
+    }
+
+    .swiperBanerLeft {
+        max-width: none;
+        padding: 40px 20px 20px;
+    }
+
+    .swiperBanerRight {
+        width: 100%;
+        height: 50vw;
+    }
+
+    .swiperBanerLeft .swiperBanerLeft-pagination {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 720px) {
+    .main_baner {
+        overflow: hidden;
+        border-radius: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .main_baner .sw_cont {
+        padding: 20px 20px 40px;
+    }
+
+    .swiperBanerRight,
+    .swiperBanerRight img {
+        border-radius: 15px;
+    }
+
+    .swiperBanerLeft {
+        padding: 0;
+        margin-top: 16px;
+    }
+
+    .main_baner h2 {
+        font-family: Manrope;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 42px;
+        text-align: left;
+    }
+
+    .swiperBanerLeft .swiperBanerLeft-pagination {
+        justify-content: start;
+    }
+
+    .swiperBanerLeft .swiper-slide .default {
+        margin-bottom: 16px;
+    }
+}
